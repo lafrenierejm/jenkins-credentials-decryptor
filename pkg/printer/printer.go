@@ -11,6 +11,7 @@ import (
 )
 
 type Credential struct {
+	JavaClass string `json:"JavaClass,omitempty"`
 	AccessKey          string `json:"accessKey,omitempty"`
 	ApiToken           string `json:"apiToken,omitempty"`
 	Description        string `json:"description,omitempty"`
@@ -62,6 +63,7 @@ func printJson(decryptedCredentials []xml.Credential) {
 	for _, credential := range decryptedCredentials {
 		t := credential.Tags
 		temp := Credential{
+			JavaClass: credential.JavaClass,
 			AccessKey:          t["accessKey"],
 			ApiToken:           t["apiToken"],
 			Token:              t["token"],

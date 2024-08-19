@@ -8,6 +8,7 @@ import (
 
 var (
 	gitlab = &Credential{
+		JavaClass: "com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl",
 		Tags: map[string]string{
 			"scope":       "GLOBAL",
 			"id":          "gitlab",
@@ -17,6 +18,7 @@ var (
 		},
 	}
 	bastion = &Credential{
+		JavaClass: "com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey",
 		Tags: map[string]string{
 			"scope":            "GLOBAL",
 			"id":               "production-bastion",
@@ -28,6 +30,7 @@ var (
 		},
 	}
 	exampleCredential = &Credential{
+		JavaClass: "com.example.ExampleCredential",
 		Tags: map[string]string{
 			"id":       "exampleId",
 			"username": "exampleUsername",
